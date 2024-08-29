@@ -194,6 +194,84 @@ Placed layout window of magic:
 ![image](https://github.com/user-attachments/assets/ff711ec6-dbea-405f-b6ea-e10571a7a0c7)
 
 
+## Cell Design Flow
+
+Library is where the information related to standard cells, macros/IPs, decap cells are present.	Bigger buff means higher drive strength & higher threshold voltage which in turn determines the speed of the cell. Bigger threshold voltage cell will take more time to switch. High Vt (hVt) low Vt (lVt) is based on the threshold voltage. Same size cells can have different Vts.
+
+The Cell design flow is divided into 3 parts: 
+1. Inputs (PDK, DRC& LVS rules, spice models, library & user-defined specifications)
+2. Design steps
+3. Outputs
+
+Tech file contains all the foundry related rules.
+
+
+
+The Cell height is defined as the distance between Vdd & Vss line. The cell designers need to make sure that the cell height is exactly fit into the Vdd & Vss distance. Cell width depends on the timing information.	Metal layers to connect a cell is defined by the user.	Pin location requirements also have to be taken into account by the cell designer
+
+Design steps are divided into three: 
+1. Ckt design
+2. Layout design
+3. Characterization
+
+**Ckt Design**: Depending on the drive strength, the NMOS & PMOS needs to be sized.
+
+**Layout Design: - characterization**: After the PMOS & NMOS network graph is obtained, make an euler’s path. Euler’s path is a path that is traced only once. Place the transistors based on the euler’s path and draw a stick diagram. Poly is vertically placed for each gate input that used in the circuit. The remaining connections are done based on the circuit. 
+
+**Output**: CDL, GDSII file, LEF, Extracted parasitics (.cir)  - Timing, power .libs, noise, function
+
+**characterization flow**
+Inputs available: subcircuit models, ckt connections, models for NMOS & PMOS
+
+Flow: 
+1. Read in the models
+2. Read the extracted spice netlist
+3. Recognize the behavior of the buffer
+4. Read the subcircuit of the inverter
+5. Attach the necessary power sources
+6. Apply the stimulus
+7. Necessary output/load capacitances (max to min range)
+8. Provide the necessary simulation commands (.tran, .dc etc.,) 
+
+Next step is feed in all the 1-8 inputs as a characterization file in Guna which gives the output models – timing, noise, power .libs, function
+
+## **4.	Timing Characterization**
+
+### **Timing threshold definitions**
+
+1.	slew_low_rise_thr – closer to low voltage and rising, typically 20% above
+
+2.	slew_high_rise_thr – closer to the high voltage and rising, typically 20% to the high voltage
+
+3.	slew_low_fall_thr – like above but falling
+
+4.	slew_high_fall_thr - like above but falling
+
+5.	in_rise_thr – 50% (typical) of the input voltage rise step
+
+6.	in_fall_thr – 50% of the input voltage fall step
+
+7.	out_rise_thr – like that for output voltage
+
+8.	out_fall_thr -  like that for output voltage
+
+9.	To calculate the delay, 50% input to output can be used
+
+### **b.	Propagation Delay & transition time**
+
+1.	Delay is out_*_thr – in_*_thr
+
+2.	Wrong threshold points taken can produce wrong delay values, in some cases negative numbers which is simply not correct
+
+3.	Even with proper choice of threshold, it is possible to see negative delays. For e.g., a long line with big capacitance and then a buffer can lead to negative delay
+
+4.	Transition time: input slew = slew_high_rise_thr - slew_low_rise_thr & output slew = slew_high_fall_thr - slew_low_fall_thr
+
+
+
+# Day 3
+
+
 
 
 

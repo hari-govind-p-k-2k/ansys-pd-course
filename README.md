@@ -1,6 +1,6 @@
-### [Day 1](https://github.com/hari-govind-p-k-2k/ansys-pd-course/blob/main/README.md#day-1)
+### [Day 1](https://github.com/hari-govind-p-k-2k/ansys-pd-course/blob/main/README.md#day-1-1)
 
-### [Day 2](https://github.com/hari-govind-p-k-2k/ansys-pd-course/blob/main/README.md#day-2)
+### [Day 2](https://github.com/hari-govind-p-k-2k/ansys-pd-course/blob/main/README.md#day-2-1)
 
 ### Day 3
 

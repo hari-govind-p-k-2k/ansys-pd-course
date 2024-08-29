@@ -150,7 +150,8 @@ Found DIE AREA from DEF file (DB unit 1000 so to get actual die area in micron, 
 ## Using Magic tool to view the created the DEF 
 
 Following command used to opening magic:
-![image](https://github.com/user-attachments/assets/9f8aff89-d320-4fb6-9c60-8433a7821a14)
+![image](https://github.com/user-attachments/assets/93451f5e-6f07-481d-b6e4-38d531df7b13)
+
 
 Keys used in magic:
 Key  | Description
@@ -171,9 +172,10 @@ As seen all the instances in lower left. Tap cells diagonally equidistant and al
 
 Querying attributes of a decap:
 
-![image](https://github.com/user-attachments/assets/5eafa019-a144-4744-9b2c-20ae4df02da3)
+![image](https://github.com/user-attachments/assets/42fbfa22-03a0-4c18-9cc7-f04edf854da8)
 
-## Placement lab
+
+## Placement using OpenLane
 
 Till now, we only placed the Macros/ IPs along with IO ports. We did not place the standard cells. The idea is to take library information of cells in the design to implement the netlist and come up with an optimal placement which could possibly pass timing. The instances are placed according to the netlist on the design instances close to the pins are placed near the IO pads.
 
@@ -186,6 +188,11 @@ To do this, we do placement. Placement is of two types:
 
 To run placement, the command is run_placement
 ![image](https://github.com/user-attachments/assets/21400460-3e88-4a05-afaa-63643b8d20e5)
+
+Placed layout window of magic:
+
+![image](https://github.com/user-attachments/assets/ff711ec6-dbea-405f-b6ea-e10571a7a0c7)
+
 
 
 

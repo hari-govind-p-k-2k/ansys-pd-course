@@ -163,6 +163,31 @@ left click and the right click other location | Creates a box for reference to z
 'what' in tkcon | query attributes of object selected
 
 
+Layout window:
+
+![image](https://github.com/user-attachments/assets/b9a25eb1-5782-4c9c-88f5-c7527cf78636)
+
+As seen all the instances in lower left. Tap cells diagonally equidistant and all pins random but equidistant as FP_IO_MODE is set to 1.
+
+Querying attributes of a decap:
+
+![image](https://github.com/user-attachments/assets/5eafa019-a144-4744-9b2c-20ae4df02da3)
+
+## Placement lab
+
+Till now, we only placed the Macros/ IPs along with IO ports. We did not place the standard cells. The idea is to take library information of cells in the design to implement the netlist and come up with an optimal placement which could possibly pass timing. The instances are placed according to the netlist on the design instances close to the pins are placed near the IO pads.
+
+If there are hard paths then placement is performed and then based on wireload estimations cap is calculated and if slew threshold is not met buffers are added to regenerate the signals and help with signal integrity.
+
+To do this, we do placement. Placement is of two types:
+
+1. Global placement : Coarse placement and no legalizations considered
+2. Detailed placement: legalizations are done (for example, where instances are placed according to standard cell rows.)
+
+To run placement, the command is run_placement
+![image](https://github.com/user-attachments/assets/21400460-3e88-4a05-afaa-63643b8d20e5)
+
+
 
 
 

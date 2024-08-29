@@ -147,8 +147,20 @@ Found DIE AREA from DEF file (DB unit 1000 so to get actual die area in micron, 
 
 ### Die Area from DEF file = (660685/1000) * (671405/1000) = 660.685 * 671.405 = 443587.21 sq microns
 
+## Using Magic tool to view the created the DEF 
 
+Following command used to opening magic:
+![image](https://github.com/user-attachments/assets/9f8aff89-d320-4fb6-9c60-8433a7821a14)
 
+Keys used in magic:
+Key  | Description
+| :---: | :---
+S | Select the instance or object
+V | center the design
+Z | Zooms in
+arrows | Move around in the design
+left click and the right click other location | Creates a box for reference to zoom in
+'what' in tkcon | query attributes of object selected
 
 
 

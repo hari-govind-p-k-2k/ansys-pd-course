@@ -277,6 +277,50 @@ Next step is feed in all the 1-8 inputs as a characterization file in Guna which
 
 # Day 3
 
+Variables in the design setup can be changed on the fly in openlane, for example, FP_IO_MODE was set to 1 initially but we can set it to 2 and do the floor. This will cause all the IO pins to move to the bottom left corner
+
+![image](https://github.com/user-attachments/assets/82925983-521e-4df2-8c22-08503c75e411)
+![image](https://github.com/user-attachments/assets/043bdeba-d975-454b-bc45-c1c0816bbb99)
+
+## 16 Mask layer based CMOS fabrication
+
+First we need to select the appropriate substrate, here we choose p type:
+
+![image](https://github.com/user-attachments/assets/7239ee30-2d9e-47fd-8ca6-232026eb0fef)
+
+
+To create active regions we need to first grow silicon oxide layer that act as an insulator. Then we deposit Si3N4 on top of it after which we deposit photoresist and then project UV light over regions we what to remove. Red regions are protected using the mask. Rest of the region reacts and can be washed out.
+
+![image](https://github.com/user-attachments/assets/f3f8d2b5-31b2-492b-9cb8-18b661c11a1a)
+
+![image](https://github.com/user-attachments/assets/67bdacb8-9df7-4692-9174-67711918eedc)
+
+![image](https://github.com/user-attachments/assets/9ad3be44-66f1-4fc2-8bc2-d76f499ab30b)
+
+
+Si3N4 also etched out in the regions required.
+
+![image](https://github.com/user-attachments/assets/c63f5166-e9cf-434f-b496-bd4d723a0fe0)
+
+
+After this we remove the photoresist.
+
+![image](https://github.com/user-attachments/assets/261ef14f-c7ed-449c-9bf6-c9ffb30ee0e7)
+
+
+We then plce the above in an oxidation furnace which will create the isolation regions. This is called LOCOS (LOCal Oxidation of Silicon)
+
+![image](https://github.com/user-attachments/assets/c935fcef-7967-4ff8-b69a-f3eb7ee0c957)
+
+
+We now remove or etch out the Si3N4.
+
+![image](https://github.com/user-attachments/assets/0dff8cd8-0350-4aa3-a886-1f5fc5ed8443)
+
+
+Now we need to create nwell and pwell
+
+
 
 
 

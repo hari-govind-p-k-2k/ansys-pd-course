@@ -1,4 +1,3 @@
-### [Day 1](https://github.com/hari-govind-p-k-2k/ansys-pd-course/blob/main/README.md#day-1-1)
 
 ### [Day 2](https://github.com/hari-govind-p-k-2k/ansys-pd-course/blob/main/README.md#day-2-1)
 
@@ -318,9 +317,31 @@ We now remove or etch out the Si3N4.
 ![image](https://github.com/user-attachments/assets/0dff8cd8-0350-4aa3-a886-1f5fc5ed8443)
 
 
-Now we need to create nwell and pwell
+Now we need to create nwell and pwell, selectively masking photoresist and applying UV light. The exposed region is then washed away
+
+![image](https://github.com/user-attachments/assets/2ee42c0a-6fd9-4a8e-9a34-8d038921d698)
+
+![image](https://github.com/user-attachments/assets/b9a87d9f-9ede-4fd9-862e-8799647ac008)
+
+We then do ion implantation with Boron atoms in this area. This is then repeated for nwell with phosporous
+
+![image](https://github.com/user-attachments/assets/a304ac3b-c1d2-43c8-9d5d-4c796d66cb59)
+
+![image](https://github.com/user-attachments/assets/6eb6dc4a-146d-46d7-8935-950159f2e6a3)
 
 
+The chip is now heated to increase the depth of the nwell and pwell
+![image](https://github.com/user-attachments/assets/2eed51b2-1570-49ad-b1e6-a5d306685f19)
+
+
+Boron(in pwell region) and arsenic (in nwell region) to get the p and n region above the pwell and nwell region respectively.
+
+![image](https://github.com/user-attachments/assets/f1feb96d-399e-4e63-8caf-6240521a5ec5)
+![image](https://github.com/user-attachments/assets/43aa24a1-5557-4e87-97f7-d3cb7eab39f6)
+
+The multiple ion implantation stages damages the oxide layer, it is stripped with hydrofluoric acid and then regrown to get high quality oxide
+
+![image](https://github.com/user-attachments/assets/e33cb4ec-5a8e-4c75-aa97-26547b3522e6)
 
 
 

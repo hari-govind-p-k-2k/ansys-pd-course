@@ -343,6 +343,7 @@ Add n and p substrate layers
 # Day 4
 
 Enable grid info from tracks.info file
+
 ![image](https://github.com/user-attachments/assets/283ee6c8-70cb-4a3a-8b3f-d6ee39514ccb)
 ![image](https://github.com/user-attachments/assets/c681da5f-d7ba-42b6-ab8f-c038e8e13c26)
 ![image](https://github.com/user-attachments/assets/68e207cb-c1ba-424c-ac59-d2a14079f76e)

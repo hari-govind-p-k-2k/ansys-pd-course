@@ -370,7 +370,7 @@ To run CTS, command used is "run_cts"
 Slack after CTS is ran (is positive), after "set_propagated_clock [all_clocks]"
 ![image](https://github.com/user-attachments/assets/caab3b08-e7fc-4bda-995f-8399f7097473)
 
-
+# Day 5
 ## Routing
 Before running routing, run PDN generation using command "gen_pdn"
 ![image](https://github.com/user-attachments/assets/9e0fa3d6-14c6-4880-b191-e342abf0650f)

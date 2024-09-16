@@ -281,71 +281,107 @@ Variables in the design setup can be changed on the fly in openlane, for example
 ![image](https://github.com/user-attachments/assets/82925983-521e-4df2-8c22-08503c75e411)
 ![image](https://github.com/user-attachments/assets/043bdeba-d975-454b-bc45-c1c0816bbb99)
 
-## 16 Mask layer based CMOS fabrication
+Clone the vsdstdcelldesign
 
-First we need to select the appropriate substrate, here we choose p type:
-
-![image](https://github.com/user-attachments/assets/7239ee30-2d9e-47fd-8ca6-232026eb0fef)
+![image](https://github.com/user-attachments/assets/f70cd8b7-ebe4-4a54-b6f0-bba98875ae7c)
 
 
-To create active regions we need to first grow silicon oxide layer that act as an insulator. Then we deposit Si3N4 on top of it after which we deposit photoresist and then project UV light over regions we what to remove. Red regions are protected using the mask. Rest of the region reacts and can be washed out.
-
-![image](https://github.com/user-attachments/assets/f3f8d2b5-31b2-492b-9cb8-18b661c11a1a)
-
-![image](https://github.com/user-attachments/assets/67bdacb8-9df7-4692-9174-67711918eedc)
-
-![image](https://github.com/user-attachments/assets/9ad3be44-66f1-4fc2-8bc2-d76f499ab30b)
+Open the cell layout in magic
+![image](https://github.com/user-attachments/assets/46d71f1e-4a86-4211-aba1-b0499148a49d)
 
 
-Si3N4 also etched out in the regions required.
+Command to extract spice model of cell
+![image](https://github.com/user-attachments/assets/fed043b9-ede2-47bc-a0d9-65ae1e23efd5)
 
-![image](https://github.com/user-attachments/assets/c63f5166-e9cf-434f-b496-bd4d723a0fe0)
-
-
-After this we remove the photoresist.
-
-![image](https://github.com/user-attachments/assets/261ef14f-c7ed-449c-9bf6-c9ffb30ee0e7)
+Spice file created
+![image](https://github.com/user-attachments/assets/6a034253-d310-4c8c-8ec3-7d8e138c41c4)
 
 
-We then plce the above in an oxidation furnace which will create the isolation regions. This is called LOCOS (LOCal Oxidation of Silicon)
+Updated spice file
+![image](https://github.com/user-attachments/assets/7d6aadd4-89af-46df-b354-44abaadfbaac)
 
-![image](https://github.com/user-attachments/assets/c935fcef-7967-4ff8-b69a-f3eb7ee0c957)
+Running ngspice
+![image](https://github.com/user-attachments/assets/a0d1bb5a-0c3d-48ec-b3b0-68094c3c0bef)
 
+![image](https://github.com/user-attachments/assets/f0c8721e-828a-4a13-a965-9b1e73b03c0c)
+![image](https://github.com/user-attachments/assets/6b280dde-bae8-4a39-97fd-fe2cc7b84bed)
 
-We now remove or etch out the Si3N4.
+## Rise transition time calculation: 80% of 3.3V -20% of 3.3V of output waveform on rising edge = 2.20467e-09 - 2.16875e-09 = 0.03592e-09
 
-![image](https://github.com/user-attachments/assets/0dff8cd8-0350-4aa3-a886-1f5fc5ed8443)
+![image](https://github.com/user-attachments/assets/432b4a16-054d-4362-8e6d-565359ae670c)
 
+## Fall transition time calculation: 20% of 3.3V -80% of 3.3V of output waveform on falling edge = 4.09476e-09 - 4.04216e-09 = 0.04216e-09
 
-Now we need to create nwell and pwell, selectively masking photoresist and applying UV light. The exposed region is then washed away
+![image](https://github.com/user-attachments/assets/3b76b9c6-0105-4d0f-b257-89850e7a3e18)
 
-![image](https://github.com/user-attachments/assets/2ee42c0a-6fd9-4a8e-9a34-8d038921d698)
+## Cell rise delay: 50% of output waveform on rising edge - 50% of input waveform on rising edge = 2.21103e-09 - 2.14926e-09 = 0.06177e-09
 
-![image](https://github.com/user-attachments/assets/b9a87d9f-9ede-4fd9-862e-8799647ac008)
+## Cell fall delay: 50% of output waveform on falling edge - 50% of input waveform on falling edge = 4.07721e-09 - 4.05e-09 = 0.02721e-09
 
-We then do ion implantation with Boron atoms in this area. This is then repeated for nwell with phosporous
+## Visualizing DRC violations
 
-![image](https://github.com/user-attachments/assets/a304ac3b-c1d2-43c8-9d5d-4c796d66cb59)
+After downloading the DRC training lab materials, open magic using command "magic -d XR"
 
-![image](https://github.com/user-attachments/assets/6eb6dc4a-146d-46d7-8935-950159f2e6a3)
+Open met4.mag from Magic GUI to try out DRC excercises
+![image](https://github.com/user-attachments/assets/927d9f8e-857e-4db5-86cd-d967633d494e)
 
+Check DRC violation by using command "drc why"
+![image](https://github.com/user-attachments/assets/f842f76a-25cf-49f2-a53e-bef410e957fc)
 
-The chip is now heated to increase the depth of the nwell and pwell
-![image](https://github.com/user-attachments/assets/2eed51b2-1570-49ad-b1e6-a5d306685f19)
+Lab excercise : implement poly resistor spacing to diff and tap
+![image](https://github.com/user-attachments/assets/cd91da05-1574-4059-914c-04e64e456811)
+![image](https://github.com/user-attachments/assets/15b005b3-9ec1-4e3d-b894-829ff86cf583)
 
-
-Boron(in pwell region) and arsenic (in nwell region) to get the p and n region above the pwell and nwell region respectively.
-
-![image](https://github.com/user-attachments/assets/f1feb96d-399e-4e63-8caf-6240521a5ec5)
-![image](https://github.com/user-attachments/assets/43aa24a1-5557-4e87-97f7-d3cb7eab39f6)
-
-The multiple ion implantation stages damages the oxide layer, it is stripped with hydrofluoric acid and then regrown to get high quality oxide
-
-![image](https://github.com/user-attachments/assets/e33cb4ec-5a8e-4c75-aa97-26547b3522e6)
-
-
-
-
+Add n and p substrate layers
+![image](https://github.com/user-attachments/assets/2196080d-0179-478d-8b03-96def3fe71a2)
 
 
+# Day 4
+
+Enable grid info from tracks.info file
+![image](https://github.com/user-attachments/assets/283ee6c8-70cb-4a3a-8b3f-d6ee39514ccb)
+![image](https://github.com/user-attachments/assets/c681da5f-d7ba-42b6-ab8f-c038e8e13c26)
+![image](https://github.com/user-attachments/assets/68e207cb-c1ba-424c-ac59-d2a14079f76e)
+
+Convert Magic layout to std cell lef
+![image](https://github.com/user-attachments/assets/ad564d93-0c16-4cb8-8f42-bd8e18372c08)
+
+Copy the generated lef and libs to the designs/picorv32a/src dir
+![image](https://github.com/user-attachments/assets/976a60d9-6950-4aac-a936-5749cfbc9d76)
+
+
+Magic GUI with std cell lef merged into the merged.lef inside tmp dir (After using the above generated lef in the synthesis stage)
+![image](https://github.com/user-attachments/assets/e77d97a1-36e9-4cc1-ae3e-318adafbc6c1)
+
+
+Initial violations in the timing report
+![image](https://github.com/user-attachments/assets/d1ef4cc9-113d-4c21-be22-534d0f91ca89)
+
+Changed SYNTH_STRATEGY to DELAY 1 and SYNTH_SIZING to 1 and re ran the synthesis
+![image](https://github.com/user-attachments/assets/04e518eb-5881-4092-97c2-d9d5cc3adbdc)
+
+
+## CTS
+
+To run CTS, command used is "run_cts"
+![image](https://github.com/user-attachments/assets/a6093ece-e1e8-4e30-af47-381263b886cd)
+
+
+Slack after CTS is ran (is positive), after "set_propagated_clock [all_clocks]"
+![image](https://github.com/user-attachments/assets/caab3b08-e7fc-4bda-995f-8399f7097473)
+
+
+## Routing
+Before running routing, run PDN generation using command "gen_pdn"
+![image](https://github.com/user-attachments/assets/9e0fa3d6-14c6-4880-b191-e342abf0650f)
+![image](https://github.com/user-attachments/assets/bbcf8a8b-e5cb-45b0-bf76-e216b0d7b4db)
+
+
+Run routing using command "run_routing"
+![image](https://github.com/user-attachments/assets/259f5776-5125-4dac-a754-9e18a963d2de)
+![image](https://github.com/user-attachments/assets/3bdd1f7d-a8bd-485d-a46d-73bc672c48d5)
+
+Result generated
+![image](https://github.com/user-attachments/assets/b40bd70a-2b11-42da-b866-0c33d95febd5)
+![image](https://github.com/user-attachments/assets/16c799b8-5097-42b3-938f-e8845322aa6d)
 
